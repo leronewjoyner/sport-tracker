@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2024 at 04:23 PM
+-- Generation Time: Nov 15, 2024 at 06:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -85,6 +85,36 @@ CREATE TABLE `games` (
   `A_Team_Score` smallint(5) UNSIGNED NOT NULL,
   `Game_Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `games`
+--
+
+INSERT INTO `games` (`Game_ID`, `H_Team_ID`, `A_Team_ID`, `H_Team_Score`, `A_Team_Score`, `Game_Date`) VALUES
+(1, 10, 13, 120, 114, '2023-11-30'),
+(2, 13, 10, 113, 112, '2023-12-02'),
+(3, 13, 10, 121, 113, '2023-12-14'),
+(4, 10, 13, 125, 130, '2024-02-14'),
+(5, 10, 14, 144, 145, '2024-01-27'),
+(6, 10, 14, 128, 110, '2024-02-22'),
+(7, 14, 10, 121, 128, '2024-03-16'),
+(8, 14, 10, 120, 134, '2024-04-09'),
+(9, 10, 24, 104, 108, '2023-10-24'),
+(10, 24, 10, 123, 115, '2023-11-22'),
+(11, 24, 10, 119, 116, '2023-12-12'),
+(12, 10, 24, 113, 112, '2024-02-10'),
+(13, 26, 10, 114, 122, '2023-10-27'),
+(14, 10, 26, 102, 101, '2023-11-01'),
+(15, 26, 10, 124, 123, '2023-11-28'),
+(16, 10, 26, 133, 134, '2024-01-25'),
+(17, 14, 13, 130, 125, '2023-11-01'),
+(18, 14, 13, 106, 103, '2024-01-07'),
+(19, 13, 14, 127, 116, '2024-01-23'),
+(20, 13, 14, 112, 116, '2024-02-28'),
+(21, 24, 13, 122, 131, '2024-01-03'),
+(22, 13, 24, 138, 111, '2024-01-08'),
+(23, 24, 13, 92, 105, '2024-04-09'),
+(24, 13, 24, 108, 124, '2024-04-10');
 
 -- --------------------------------------------------------
 
@@ -343,7 +373,7 @@ ALTER TABLE `team_stats`
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `Game_ID` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Game_ID` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `players`
