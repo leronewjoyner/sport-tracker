@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 15, 2024 at 06:06 PM
+-- Generation Time: Nov 20, 2024 at 06:28 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -199,7 +199,8 @@ INSERT INTO `players` (`Player_ID`, `Team_ID`, `Name`, `Height`, `Weight`, `Posi
 (59, 26, 'Trey Lyles', 6.8, 225.0, 'PF', '1996-11-05', 41),
 (60, 26, 'KZ Okpala', 6.8, 215.0, 'SF', '1999-06-02', 0),
 (61, 26, 'Neemias Queta', 7.0, 250.0, 'C', '1999-01-02', 88),
-(62, 26, 'Matthew Dellavedova', 6.3, 200.0, 'PG', '1990-09-08', 18);
+(62, 26, 'Matthew Dellavedova', 6.3, 200.0, 'PG', '1990-09-08', 18),
+(63, 13, 'James Harden', 6.5, 220.0, 'PG', '1989-08-26', 1);
 
 -- --------------------------------------------------------
 
@@ -210,7 +211,7 @@ INSERT INTO `players` (`Player_ID`, `Team_ID`, `Name`, `Height`, `Weight`, `Posi
 CREATE TABLE `player_stats` (
   `Stat_ID` smallint(5) UNSIGNED NOT NULL,
   `Game_ID` smallint(5) UNSIGNED NOT NULL,
-  `Player_ID` smallint(5) UNSIGNED NOT NULL,
+  `Player_ID` smallint(5) UNSIGNED DEFAULT NULL,
   `Points` smallint(5) UNSIGNED NOT NULL,
   `Assists` smallint(5) UNSIGNED NOT NULL,
   `Rebounds` smallint(5) UNSIGNED NOT NULL,
@@ -218,6 +219,68 @@ CREATE TABLE `player_stats` (
   `Blocks` smallint(5) UNSIGNED NOT NULL,
   `Fouls` smallint(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `player_stats`
+--
+
+INSERT INTO `player_stats` (`Stat_ID`, `Game_ID`, `Player_ID`, `Points`, `Assists`, `Rebounds`, `Steals`, `Blocks`, `Fouls`) VALUES
+(1, 1, 15, 15, 10, 1, 0, 0, 5),
+(2, 1, 63, 18, 7, 3, 1, 0, 3),
+(3, 1, 14, 23, 0, 7, 2, 0, 2),
+(4, 1, 20, 9, 1, 5, 1, 0, 1),
+(5, 1, 17, 18, 0, 13, 0, 1, 1),
+(6, 1, 16, 14, 6, 11, 0, 0, 1),
+(7, 1, 18, 5, 0, 0, 1, 0, 1),
+(8, 1, NULL, 10, 2, 2, 0, 0, 2),
+(9, 1, NULL, 0, 1, 1, 0, 0, 2),
+(10, 1, NULL, 0, 0, 0, 0, 0, 2),
+(11, 1, 2, 22, 2, 6, 0, 1, 2),
+(12, 1, 1, 26, 8, 7, 1, 1, 2),
+(13, 1, 3, 13, 5, 5, 0, 0, 5),
+(14, 1, 9, 13, 1, 3, 0, 1, 2),
+(15, 1, 6, 2, 2, 5, 0, 0, 2),
+(16, 1, NULL, 13, 2, 8, 0, 0, 2),
+(17, 1, 11, 13, 5, 5, 1, 0, 2),
+(18, 1, 7, 17, 3, 6, 1, 1, 0),
+(19, 1, NULL, 1, 2, 2, 0, 0, 1),
+(20, 2, 1, 22, 11, 4, 0, 0, 0),
+(21, 2, 2, 17, 2, 6, 1, 0, 3),
+(22, 2, 3, 21, 4, 9, 0, 1, 2),
+(23, 2, 9, 21, 2, 5, 2, 0, 3),
+(24, 2, 11, 6, 3, 2, 1, 0, 2),
+(25, 2, NULL, 12, 3, 6, 1, 2, 2),
+(26, 2, 6, 7, 3, 8, 0, 1, 1),
+(27, 2, 7, 6, 0, 2, 0, 0, 0),
+(28, 2, NULL, 0, 3, 0, 0, 0, 2),
+(29, 2, 14, 20, 7, 8, 1, 0, 2),
+(30, 2, 15, 25, 6, 6, 1, 0, 5),
+(31, 2, 63, 21, 9, 5, 1, 0, 4),
+(32, 2, 20, 3, 2, 2, 1, 0, 1),
+(33, 2, 17, 12, 1, 7, 0, 3, 4),
+(34, 2, 18, 12, 0, 1, 0, 0, 1),
+(35, 2, NULL, 12, 1, 4, 1, 2, 3),
+(36, 2, 16, 8, 2, 6, 0, 1, 0),
+(37, 2, NULL, 0, 3, 1, 0, 0, 1),
+(38, 3, NULL, 4, 2, 7, 3, 1, 2),
+(39, 3, NULL, 17, 4, 4, 0, 0, 3),
+(40, 3, NULL, 30, 5, 1, 2, 0, 1),
+(41, 3, NULL, 8, 5, 7, 1, 0, 2),
+(42, 3, NULL, 15, 1, 5, 1, 0, 4),
+(43, 3, NULL, 12, 3, 2, 0, 0, 4),
+(44, 3, NULL, 9, 0, 3, 0, 1, 5),
+(45, 3, NULL, 5, 1, 6, 0, 0, 2),
+(46, 3, NULL, 11, 1, 5, 1, 0, 1),
+(47, 3, NULL, 2, 0, 3, 0, 0, 0),
+(48, 3, NULL, 28, 15, 7, 1, 4, 3),
+(49, 3, NULL, 27, 2, 8, 1, 1, 2),
+(50, 3, NULL, 10, 2, 8, 0, 2, 5),
+(51, 3, NULL, 18, 1, 4, 0, 0, 2),
+(52, 3, NULL, 2, 2, 3, 1, 0, 1),
+(53, 3, NULL, 21, 2, 5, 1, 0, 3),
+(54, 3, NULL, 9, 2, 4, 0, 1, 0),
+(55, 3, NULL, 4, 1, 1, 1, 1, 2),
+(56, 3, NULL, 2, 0, 0, 1, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -379,13 +442,13 @@ ALTER TABLE `games`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `Player_ID` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `Player_ID` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `player_stats`
 --
 ALTER TABLE `player_stats`
-  MODIFY `Stat_ID` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Stat_ID` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `teams`
