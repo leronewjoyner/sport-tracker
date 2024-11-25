@@ -116,6 +116,7 @@ const EnterStats = () => {
                             <input
                                 type="number"
                                 min="0"
+                                style={{ border: '1px solid black' }}
                                 onChange={(e) =>
                                     handlePlayerStatChange(player.Player_ID, e.target.value, 'home')
                                 }
@@ -132,6 +133,7 @@ const EnterStats = () => {
                             <input
                                 type="number"
                                 min="0"
+                                style={{ border: '1px solid black' }}
                                 onChange={(e) =>
                                     handlePlayerStatChange(player.Player_ID, e.target.value, 'away')
                                 }
@@ -140,7 +142,12 @@ const EnterStats = () => {
                     ))}
             </div>
 
-            <button onClick={handleSubmit}>Submit Game Stats</button>
+            <button 
+                onClick={handleSubmit} 
+                className="bg-green-500 text-white py-2 px-4 rounded mt-5 hover:bg-green-700"
+            >
+                Submit Game Stats
+            </button>
         </div>
     );
 };
