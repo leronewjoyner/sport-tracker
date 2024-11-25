@@ -30,8 +30,6 @@ const IndexPage = () => {
 
     return (
         <div>
-            <h1>Sport Tracker</h1>
-
             <label htmlFor="table-select">Choose a table to display:</label>
             <select id="table-select" value={selectedTable} onChange={handleTableChange}>
                 <option value="teams">Teams</option>
