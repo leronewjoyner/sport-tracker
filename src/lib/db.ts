@@ -5,7 +5,7 @@ const dbConfig = {
     host: 'localhost',
     user: 'root',
     password: 'Barkley25',
-    database: 'sport_tracker',  // Replace with your actual database name
+    database: 'sport_tracker', 
 };
 
 export async function connectToDatabase() {
