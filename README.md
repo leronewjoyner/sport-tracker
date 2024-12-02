@@ -6,110 +6,136 @@ run sql file 459final_setup.sql in SQL Workbench to implement schema
 in src/lib/db.ts change dbconfig to match your local server settings
 run next dev script from package.json
 
-Project Report: Sports Team Stats Tracker
-Team:
-BACKEND Engineer : Joseph Olaleye
-BACKEND Engineer : Paul Enyi
-BACKEND Engineer : Angel Maiga
-FRONTEND Engineer: Stephan Akinjide
-FRONTEND Engineer : Lerone Joyner
+# Project Report: Sports Team Stats Tracker
 
-1. Introduction
-Motivation:
-The Sports Team Stats Tracker was created in response to the growing demand for a comprehensive platform that monitors and evaluates the performance of sports teams. Conventional approaches, such as looking through several websites or printed materials, are frequently ineffective. This program is a comprehensive resource for sports fans, fantasy players, and analysts since it offers a centralized system with accurate,up-to-date statistics and historical data.
-Target Audience:
-Avid Sports Fans: For up-to-date updates on team and player performances.
-Fantasy Sports Players: To make informed decisions using performance metrics.
-Sports Analysts: For in-depth analysis of trends and comparisons.
+## Team:
+- **Backend Engineers**:  
+  - Joseph Olaleye  
+  - Paul Enyi  
+  - Angel Maiga  
+- **Frontend Engineers**:  
+  - Stephan Akinjide  
+  - Lerone Joyner  
 
-2. Design
-System Methodology: The system employs a structured design approach to create a comprehensive sports tracking platform that integrates a relational database with a responsive web interface for seamless analysis and interaction.
-Application Area Identification:
-Focused on NBA teams and performance metrics.
-Covers historical data for the 2023-2024 season to allow users to analyze team and player performance over time.
-Functional Requirements:
-Features:
-Team and player tracking to view statistics and performance metrics.
-Stat entry functionality.
-Data Modeling:
-Entity Relationships:
-Established connections between entities such as Teams, Players, Games, Player Stats, and Team Stats.
-Constraints:
-Enforced data integrity and accuracy across all entities.
-Database Schema:
-Tables include:
-Teams Table: team_id, team_name, city, arena, coach_id.
-Team States Table: team_stat_id, team_id, wins, losses
-Coaches Table: Coach_id, Name, DOB, Experience, Championships
-Players Table: player_id, team_id, name, height, weight, position,dob, jersey_no
-Player Stats Table: stat_id, player_id, total_points
-Games Table: game_id, h_team_id, a_team_id, h_team_score_ a_team_score, game_date.
-Normalization:
-Ensures redundancy elimination and data integrity for efficient storage and retrieval.
-ER Diagram:
-Visualizes relationships between key tables, highlighting dependencies and associations.
-Relationships enable seamless integration and accessibility of data.
-Screenshots:(Schema or ER Diagram Screenshot)
+---
 
-3. Implementation
-Backend Implementation
-Database:
-Created a MySQL database named "Sports Tracker" with interconnected tables: Coaches, Teams, Players, Player_Stats, Games, and Team_Stats.
-Populated data for coaches, teams, and team statistics, focusing on five NBA teams and their inter-conference games for scalability and targeted insights.
-Ensured data integrity and completeness through normalized schema design.
-Server:
-Built using Node.js and Express.js to manage backend operations.
-Developed RESTful APIs for seamless retrieval and updating of team and player statistics.
-Frontend Implementation
-Framework:
-Used Next.js to create responsive, interactive pages for user engagement.
-Data Integration:
-Established real-time communication between the database and the frontend to ensure accurate data retrieval and updates.
-Data Display:
-Implemented features to visualize stored data, including team standings, player performances, and game results.
-Displayed tables for coaches, players, and stats seamlessly connected to the backend database for a smooth user experience.
-Data Entry:
-Implemented feature to allow for single game statistics and results to be entered via the frontend
-Built functionality to reflect results of each game across all relevant tables in the database.
+## 1. Introduction
 
-4. Functionality
-User Features
-Team and Player Stats Tracking:
-Users can browse detailed metrics for selected NBA teams and players through an intuitive interface.
-Admin Stat Entry
-Admins can enter the results of each game along with each player's statistics, allowing them to instantly be reflected in the database.
-Screenshots: of the user dashboard, player stats display
-Stat Viewing Page:
+### Motivation:
+The Sports Team Stats Tracker was created to address the need for a centralized platform to monitor and evaluate sports team performance. Traditional methods, like browsing multiple websites or printed materials, are often inefficient. This program serves as a comprehensive resource for sports fans, fantasy players, and analysts by providing accurate, up-to-date statistics and historical data in one location.
 
-Stat Entry Page:
+### Target Audience:
+- **Avid Sports Fans**: For real-time updates on team and player performances.  
+- **Fantasy Sports Players**: To make informed decisions using performance metrics.  
+- **Sports Analysts**: For in-depth trend analysis and comparisons.  
 
+---
 
-5. User Manual
-For End Users:
-Browse Teams and Players:
-Navigate through the dashboard for stats and information for teams, players, coaches, and games.
-Enter statistics:
-After each game, administrators can go to the stat entry tab and enter the results of the game along with each player's stats.
+## 2. Design
 
-6. Conclusion
-The Sports Team Stats Tracker is a robust platform designed to bridge the gap between raw data and meaningful insights. Tailored to the needs of sports fans, fantasy players, analysts, and casual viewers, it simplifies access to historical data while maintaining a flexible and intuitive design. By focusing on the 2022-2024 NBA seasons, the system balances depth of information with ease of use, keeping users updated and engaged with team and player performance metrics.
-Future Improvements:
-Real-Time Data Updates:
-Transition to live stat tracking for ongoing games.
-Advanced Analytics:
-Incorporate visualization tools and predictive analytics.
-User Engagement:
-Add forums and sharing features for community discussions.
-Personalization:
-Create an interface for users to create profiles and have customized dashboards to track their favorite teams and players.
+### System Methodology:
+The system uses a structured design approach, combining a relational database with a responsive web interface for seamless analysis and interaction.
 
-7. Implementation Video
-implementation vid.mp4
-https://drive.google.com/file/d/1JtoBOnAjgWpVXIMI9hu151gJszLCjRSU/view?usp=sharing 
+### Application Area Identification:
+- Focused on **NBA teams** and performance metrics.
+- Covers **historical data** for the 2023-2024 season, enabling users to analyze team and player performance over time.
 
-8. User Manual Video
-user_manual vid.mp4
-https://drive.google.com/file/d/1DemAze_K38YsRQlJzlLmXdvBChnlZSlj/view?usp=sharing 
+### Functional Requirements:
+#### Features:
+- Team and player tracking for statistics and performance metrics.  
+- Stat entry functionality for game results.  
 
-9. GITHUB LINK
-https://github.com/leronewjoyner/sport-tracker 
+#### Data Modeling:
+- **Entity Relationships**: Links between entities like Teams, Players, Games, Player Stats, and Team Stats.  
+- **Constraints**: Ensure data integrity and accuracy.
+
+#### Database Schema:
+- **Tables**:  
+  - `Teams`: `team_id`, `team_name`, `city`, `arena`, `coach_id`  
+  - `Team Stats`: `team_stat_id`, `team_id`, `wins`, `losses`  
+  - `Coaches`: `coach_id`, `name`, `dob`, `experience`, `championships`  
+  - `Players`: `player_id`, `team_id`, `name`, `height`, `weight`, `position`, `dob`, `jersey_no`  
+  - `Player Stats`: `stat_id`, `player_id`, `total_points`  
+  - `Games`: `game_id`, `h_team_id`, `a_team_id`, `h_team_score`, `a_team_score`, `game_date`  
+
+- **Normalization**: Eliminates redundancy and ensures efficient storage and retrieval.
+
+#### ER Diagram:
+- Visualizes relationships between tables, highlighting dependencies and associations for seamless data integration and accessibility.
+
+--![alt text](<Screenshot 2024-12-02 082419.png>)
+--![!()](<Screenshot 2024-12-02 082720.png>)
+
+## 3. Implementation
+
+### Backend Implementation
+#### Database:
+- Created a **MySQL database** named "Sports Tracker" with interconnected tables: Coaches, Teams, Players, Player Stats, Games, and Team Stats.  
+- Populated data for five NBA teams and their inter-conference games.  
+- Ensured data integrity with a normalized schema design.
+
+#### Server:
+- Built using **Node.js** and **Express.js** to handle backend operations.  
+- Developed **RESTful APIs** for retrieving and updating team and player statistics.
+
+### Frontend Implementation
+#### Framework:
+- Used **Next.js** to create responsive, interactive pages for user engagement.
+
+#### Data Integration:
+- Enabled real-time communication between the database and frontend for accurate data updates.  
+
+#### Data Display:
+- Visualized stored data, including team standings, player performances, and game results.  
+- Connected tables for coaches, players, and stats seamlessly with the backend database.  
+
+#### Data Entry:
+- Added functionality to allow single-game statistics and results to be entered via the frontend.  
+- Automatically reflected game results across relevant database tables.
+
+---
+
+## 4. Functionality
+
+### User Features:
+- **Team and Player Stats Tracking**:  
+  Users can browse detailed metrics for NBA teams and players via an intuitive interface.  
+- **Admin Stat Entry**:  
+  Admins can enter game results and player statistics, which are instantly reflected in the database.
+
+### Screenshots:
+- **User Dashboard and Player Stats Display**: [Stat Viewing Page](#) ![](<Screenshot 2024-12-02 075212.png>)
+- **Stat Entry Page**: [Stat Entry Page](#) ![](<Screenshot 2024-12-02 075313.png>)
+
+---
+
+## 5. User Manual
+
+### For End Users:
+- **Browse Teams and Players**:  
+  Use the dashboard to access stats and information on teams, players, coaches, and games.  
+- **Enter Statistics**:  
+  After each game, administrators can input results and player stats via the stat entry tab.
+
+---
+
+## 6. Conclusion
+
+The Sports Team Stats Tracker bridges the gap between raw data and meaningful insights. Designed for sports fans, fantasy players, analysts, and casual viewers, it simplifies access to historical data with a flexible and user-friendly design. By focusing on the 2022-2024 NBA seasons, the platform balances comprehensive information with usability, keeping users updated on team and player performances.
+
+### Future Improvements:
+- **Real-Time Data Updates**: Live stat tracking for ongoing games.  
+- **Advanced Analytics**: Visualization tools and predictive analytics.  
+- **User Engagement**: Forums and sharing features for community discussions.  
+- **Personalization**: Customized dashboards for tracking favorite teams and players.  
+
+---
+
+## 7. Implementation Video:
+[Implementation Video](https://drive.google.com/file/d/1JtoBOnAjgWpVXIMI9hu151gJszLCjRSU/view?usp=sharing)
+
+## 8. User Manual Video:
+[User Manual Video](https://drive.google.com/file/d/1DemAze_K38YsRQlJzlLmXdvBChnlZSlj/view?usp=sharing)
+
+## 9. GitHub Repository:
+[GitHub Link](https://github.com/leronewjoyner/sport-tracker)
