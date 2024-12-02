@@ -138,4 +138,4 @@ The Sports Team Stats Tracker bridges the gap between raw data and meaningful in
 [User Manual Video](https://drive.google.com/file/d/1DemAze_K38YsRQlJzlLmXdvBChnlZSlj/view?usp=sharing)
 
 ## 9. GitHub Repository:
-[GitHub Link](https://github.com/leronewjoyner/sport-tracker)
+[GitHub Link](hhttps://github.com/COSC-459/Group8-Fall24-Final)
